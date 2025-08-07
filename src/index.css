@@ -1,140 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(#303b37, #1a1f1d);
-  color: #e1eeeb;
-  min-height: 100vh;
-}
-
-#header {
-  text-align: center;
-  margin: 3rem auto;
-}
-
-#header img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  background-color: transparent;
-}
-
-#header h1 {
-  font-size: 1.5rem;
-}
-
-.info-box {
-  padding: 1rem;
-  max-width: 30rem;
-  margin: 2rem auto;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+.congrats-message {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #ff0066, #ffcc00, #33cc33, #0066ff, #cc33ff);
+  background-size: 400% 400%;
+  animation: rainbow 4s linear infinite;
   color: white;
+  font-size: 3rem;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  z-index: 1000;
   text-align: center;
-  font-size: 1.5rem;
-}
-
-.info-box button {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #2b996d;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#user-input {
-  padding: 1rem;
-  max-width: 30rem;
-  margin: 2rem auto;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
-}
-
-#user-input label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.5rem;
   font-weight: bold;
-  text-transform: uppercase;
+  user-select: none;
 }
 
-#user-input input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #76c0ae;
-  border-radius: 0.25rem;
-  background-color: transparent;
-  color: #c2e9e0;
-  font-size: 1rem;
-}
-
-#result {
-  max-width: 50rem;
-  margin: 2rem auto;
-  padding: 1rem;
-  table-layout: fixed;
-  border-spacing: 1rem;
-  text-align: right;
-}
-
-#result thead {
-  font-size: 0.7rem;
-  color: #83e6c0;
-}
-
-#result tbody {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85rem;
-  color: #c2e9e0;
-}
-
-.center {
-  text-align: center;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Ensures the container takes up the full height of the viewport */
-  margin: 20px; /* Adds a margin of 20px around the container */
-}
-
-
-.App img {
-  max-width: 50%; /* Set the maximum width of the image to 50% of the container width */
-  max-height: 50%; /* Set the maximum height of the image to 50% of the container height */
-  margin-bottom: 20px; /* Adds a margin of 20px below the image */
-}
-
-.info-box {
-  margin-top: 10px; /* Adds a margin of 20px above the info-box */
-}
-.input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Add space between each input group */
-}
-
-.input-group button {
-  flex: 1; /* Make the button take up equal space as the input field */
-}
-
-.input-group input {
-  flex: 10; /* Make the input field take up more space than the button */
-  margin-left: 10px; /* Add space between the button and input field */
-  width: 200px; /* Set the width of the input field */
-  padding:10px; /* Add padding inside the input field */
+@keyframes rainbow {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

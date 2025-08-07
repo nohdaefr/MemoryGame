@@ -1,0 +1,116 @@
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fff176; /* צהוב שמשי */
+  font-family: Arial, sans-serif;
+}
+.difficulty-select label {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+.app {
+  min-height: 100vh;
+  background-color: #fff176; /* רקע צהוב גם במיכל */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  /* אם רוצים שקוף, אין background-color כאן */
+}
+
+/* קלפים עם אפקט סיבוב */
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.card-front {
+  background-color: #ffffff;
+  transform: rotateY(180deg); /* כאן מסתירים את החלק הקדמי כאשר לא flipped */
+}
+
+.card-back {
+  background-color: #ffecb3;
+}
+.popup-congrats {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  animation: popupFade 0.4s ease-in-out;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
